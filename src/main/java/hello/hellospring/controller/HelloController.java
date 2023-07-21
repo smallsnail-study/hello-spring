@@ -29,4 +29,28 @@ public class HelloController {
     public String helloString(@RequestParam("name") String name) {
         return "hello " + name; // "hello spring"
     }
+
+    // data를 내놓는 실제 많이 사용하는 API방식 -> 객체가 JSON 형식으로 변환된다.
+    @GetMapping("hello-api")
+    @ResponseBody
+    public Hello helloApi(@RequestParam("name") String name) {
+        Hello hello = new Hello(); // 객체생성
+        hello.setName(name);
+        return hello;
+    }
+
+    // JavaBean 규약, property 접근방식
+    static class Hello {
+        // private이라 외부에서 꺼낼 수 없다.
+        private String name;
+
+        // 라이브러리 등에서 사용하려면 아래와 같은 메서드(public) 등으로 접근해야 함
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
 }
