@@ -1,6 +1,7 @@
 package io.devlabs.intro.repository;
 
 import io.devlabs.intro.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
