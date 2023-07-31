@@ -2,16 +2,13 @@ package io.devlabs.intro.service;
 
 import io.devlabs.intro.domain.Member;
 import io.devlabs.intro.repository.MemberRepository;
-import io.devlabs.intro.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;
 
+
 public class MemberService {
-
     private final MemberRepository memberRepository;
-
-//    private final MemberRepository memberRepository = new MemoryMemberRepository();
     public MemberService(MemberRepository memberRepository) { // DI(Dependency Injection)
         this.memberRepository = memberRepository;
     }
